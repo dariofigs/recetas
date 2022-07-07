@@ -1,0 +1,288 @@
+@import "reset.css";
+
+@font-face {
+    font-family: "Manrope";
+    src: url("../Manrope-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 200 800;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+    font-family: "Manrope";
+    font-weight: var(--weight-normal);
+    line-height: 150%;
+    font-size: 2rem;
+    letter-spacing: -.05rem;
+    color: var(--text-color);
+}
+    
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px,1fr));
+    grid-auto-rows: 230px;
+    grid-auto-flow: dense;
+    margin: calc(var(--border-width) * -1);
+}
+
+.cards li {
+    outline: var(--border-width) solid var(--border-color);
+    margin: var(--border-width) 0 0 var(--border-width);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: all var(--transition-time) ease-in-out;
+}
+
+.cards li:nth-child(1), .cards li:nth-child(10), .cards li:nth-child(11) {
+    grid-column-end: span 2;
+}
+
+.cards li:nth-child(4) {
+    grid-row-end: span 2;
+}
+
+.cards li:nth-child(5) {
+    grid-column-end: span 3;
+}
+
+.cards li:last-child {
+    grid-column-end: span 4;
+}
+
+.cards li:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    transition: all var(--transition-time) ease-in-out;
+}
+
+.cards li:hover svg {
+    stroke: var(--bg-color);
+    transition: all var(--transition-time) ease-in-out;
+}
+
+.cards li a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.cards li svg {
+    width: auto;
+    height: 20px;
+    stroke: var(--text-color);
+    transition: all var(--transition-time) ease-in-out;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-type {
+    line-height: 100%;
+    letter-spacing: -.1rem;
+    font-size: 2.4rem;
+}
+
+.card-name {
+    font-weight: var(--weight-medium);
+    font-size: 4.2rem;
+    letter-spacing: -.15rem;
+    line-height: 90%;
+}
+
+.detail-page {
+    display: flex;
+    justify-content: flex-end;
+    min-height: calc(100vh - (56px * 2));
+    padding: 56px;
+}
+
+.detail-page svg {
+    stroke: var(--text-color);
+    height: 28px;
+    width: 28px;
+    padding: 8px;
+}
+
+.detail-page h1 {
+    font-weight: bold;
+    font-size: 7.2rem;
+    line-height: 90%;
+    letter-spacing: -.25rem;
+}
+
+.detail-page h2 {
+    font-weight: var(--weight-medium);
+    font-size: 3.2rem;
+    line-height: 100%;
+    letter-spacing: -.15rem;
+}
+
+.detail-page h3 {
+    margin: 24px 0 8px;
+    font-weight: var(--weight-medium);
+}
+
+.metadata ul {
+    display: flex;
+    color: var(--text-color-secondary);
+    font-weight: var(--weight-light);
+}
+
+.metadata li:first-of-type {
+    margin-right: 16px;
+}
+
+.page-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    left: 56px;
+    top: 56px;
+    min-height: calc(100vh - (56px * 2));
+    width: calc(50% - 56px - 40px);
+}
+
+a.back-to-home {
+    display: inline-block;
+    margin: -8px 0 0 -8px;
+    height: 44px;
+}
+
+.page-right {
+    width: 50%;
+}
+
+.page-right ul {
+    list-style-type: "\2013";
+    list-style-position: inside;
+}
+
+.page-right li {
+    margin-bottom: 2px;
+}
+
+.page-right .secondary {
+    color: var(--text-color-secondary);
+    margin-left: 2px;
+    font-weight: var(--weight-light);
+}
+
+.page-right div {
+    margin-bottom: 40px;
+}
+
+.page-right div:last-of-type {
+    margin-bottom: 0;
+}
+
+.page-right p {
+    margin-bottom: 12px;
+}
+
+.page-right div p:last-of-type {
+    margin-bottom: 0;
+}
+
+.notes h2 {
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1290px) {
+    
+    .cards li:nth-child(1), .cards li:nth-child(11) {
+        grid-column-end: span 2;
+    }
+
+    .cards li:nth-child(10), .cards li:nth-child(11), .cards li:nth-child(4), .cards li:nth-child(5) {
+        grid-column-end: span 1;
+        grid-row-end: span 1;
+    }
+    
+    .cards li:nth-child(2), .cards li:nth-child(10) {
+        grid-row-end: span 2;
+    }
+    
+    .cards li:nth-child(6), .cards li:nth-child(12) {
+        grid-column-end: span 2;
+    }
+    
+    .cards li:last-child {
+        grid-column-end: span 3;
+    }
+
+}
+
+@media screen and (max-width: 975px) {
+
+    .cards li:nth-child(11), .cards li:nth-child(2), .cards li:nth-child(6), .cards li:nth-child(12), .cards li:nth-child(10) {
+        grid-column-end: span 1;
+        grid-row-end: span 1;
+    }
+
+    .cards li:nth-child(5), .cards li:nth-child(7) {
+        grid-row-end: span 2;
+    }
+
+    .cards li:last-child {
+        grid-column-end: span 2;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    
+    .detail-page, .page-left {
+        display: block;
+    }
+
+    .page-left {
+        position: relative;
+        margin-bottom: 24px;
+    }
+
+    .page-left, .page-right {
+        width: 100%;
+        left: 0;
+        top: 0;
+        min-height: auto;
+    }
+
+    .metadata {
+        margin-top: 40px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .cards li:nth-child(1), .cards li:nth-child(5), .cards li:nth-child(7), .cards li:last-child {
+        grid-column-end: span 1;
+        grid-row-end: span 1;
+    }
+}
+
+:root {
+    --bg-color: #f7e8d5;
+    --border-color: #262626;
+    --text-color: var(--border-color);
+    --text-color-secondary: #7c7469;
+    --transition-time: .1s;
+    --border-width: 2px;
+    --weight-bold: 777;
+    --weight-medium: 666;
+    --weight-normal: 444;
+    --weight-light: 375;
+}
