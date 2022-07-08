@@ -38,7 +38,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: all var(--transition-time) ease-in-out;
+    transition: color var(--transition-time) ease-in-out;
+    transition: background-color var(--transition-time) ease-in-out;
 }
 
 .cards li:nth-child(1), .cards li:nth-child(10), .cards li:nth-child(11) {
@@ -53,19 +54,20 @@ body {
     grid-column-end: span 3;
 }
 
-.cards li:last-child {
+.cards li:nth-child(15) {
     grid-column-end: span 4;
 }
 
 .cards li:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
-    transition: all var(--transition-time) ease-in-out;
+    transition: color var(--transition-time) ease-in-out;
+    transition: background-color var(--transition-time) ease-in-out;
 }
 
 .cards li:hover svg {
     stroke: var(--bg-color);
-    transition: all var(--transition-time) ease-in-out;
+    transition: stroke var(--transition-time) ease-in-out;
 }
 
 .cards li a {
@@ -81,7 +83,7 @@ body {
     width: auto;
     height: 20px;
     stroke: var(--text-color);
-    transition: all var(--transition-time) ease-in-out;
+    transition: stroke var(--transition-time) ease-in-out;
 }
 
 .card-top {
@@ -128,10 +130,11 @@ body {
     font-size: 3.2rem;
     line-height: 100%;
     letter-spacing: -.15rem;
+    margin-bottom: 24px;
 }
 
 .detail-page h3 {
-    margin: 24px 0 8px;
+    margin: 0 0 8px 0;
     font-weight: var(--weight-medium);
 }
 
@@ -181,7 +184,7 @@ a.back-to-home {
     font-weight: var(--weight-light);
 }
 
-.page-right div {
+.ingredients, .instructions, .notes {
     margin-bottom: 40px;
 }
 
@@ -195,6 +198,10 @@ a.back-to-home {
 
 .page-right div p:last-of-type {
     margin-bottom: 0;
+}
+
+.ingredients div, .instructions div, .notes div {
+    margin-bottom: 24px;
 }
 
 .notes h2 {
@@ -220,7 +227,7 @@ a.back-to-home {
         grid-column-end: span 2;
     }
     
-    .cards li:last-child {
+    .cards li:nth-child(15) {
         grid-column-end: span 3;
     }
 
@@ -237,7 +244,7 @@ a.back-to-home {
         grid-row-end: span 2;
     }
 
-    .cards li:last-child {
+    .cards li:nth-child(15) {
         grid-column-end: span 2;
     }
 
@@ -268,7 +275,7 @@ a.back-to-home {
 }
 
 @media screen and (max-width: 650px) {
-    .cards li:nth-child(1), .cards li:nth-child(5), .cards li:nth-child(7), .cards li:last-child {
+    .cards li:nth-child(1), .cards li:nth-child(5), .cards li:nth-child(7), .cards li:nth-child(15) {
         grid-column-end: span 1;
         grid-row-end: span 1;
     }
