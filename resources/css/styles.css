@@ -167,6 +167,10 @@ a.back-to-home {
 
 .page-right {
     width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .page-right ul {
