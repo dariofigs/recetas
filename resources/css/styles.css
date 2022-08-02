@@ -17,7 +17,7 @@ body {
     font-weight: var(--weight-normal);
     line-height: 150%;
     font-size: 2rem;
-    letter-spacing: -.05rem;
+    letter-spacing: -.025rem;
     color: var(--text-color);
 }
     
@@ -282,6 +282,18 @@ a.back-to-home {
     .cards li:nth-child(1), .cards li:nth-child(5), .cards li:nth-child(7), .cards li:nth-child(15) {
         grid-column-end: span 1;
         grid-row-end: span 1;
+    }
+}
+
+@media screen and (min-width: 1930px) {
+
+    .cards {
+        grid-template-columns: repeat(auto-fill, minmax(420px,1fr));
+        grid-auto-rows: 250px;
+    }
+
+    .cards li {
+        padding: 32px;
     }
 }
 
