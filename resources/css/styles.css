@@ -138,6 +138,11 @@ body {
     font-weight: var(--weight-medium);
 }
 
+em {
+    font-style: italic;
+    margin: 0 1.5px 0 -3px;
+}
+
 .metadata ul {
     display: flex;
     color: var(--text-color-secondary);
