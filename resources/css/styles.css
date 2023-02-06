@@ -42,11 +42,11 @@ body {
     transition: background-color var(--transition-time) ease-in-out;
 }
 
-.cards li:nth-child(1), .cards li:nth-child(10), .cards li:nth-child(11) {
+.cards li:nth-child(1), .cards li:nth-child(10), .cards li:nth-child(11), .cards li:nth-child(21) {
     grid-column-end: span 2;
 }
 
-.cards li:nth-child(4) {
+.cards li:nth-child(4), .cards li:nth-child(19) {
     grid-row-end: span 2;
 }
 
@@ -219,11 +219,11 @@ a.back-to-home {
 
 @media screen and (max-width: 1290px) {
     
-    .cards li:nth-child(1), .cards li:nth-child(11) {
+    .cards li:nth-child(1), .cards li:nth-child(11), .cards li:nth-child(21) {
         grid-column-end: span 2;
     }
 
-    .cards li:nth-child(10), .cards li:nth-child(11), .cards li:nth-child(4), .cards li:nth-child(5) {
+    .cards li:nth-child(10), .cards li:nth-child(11), .cards li:nth-child(4), .cards li:nth-child(5), .cards li:nth-child(19) {
         grid-column-end: span 1;
         grid-row-end: span 1;
     }
